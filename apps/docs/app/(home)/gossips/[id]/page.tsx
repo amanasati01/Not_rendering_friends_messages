@@ -28,10 +28,7 @@ export default function Chat({ params }: { params: { id: number } }) {
       }
     };
 
-    return () => {
-      // Clean up the event listener when the component unmounts
-      ws.onmessage = null;
-    };
+   
   }, [ws]); // Run this effect whenever ws changes
 
   useEffect(() => {

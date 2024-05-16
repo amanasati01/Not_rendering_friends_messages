@@ -28,6 +28,11 @@ wss.on('connection', function connection(ws,req) {
         console.log("hi ");
         // client.readyState === WebSocket.OPEN && 
         if (client ==recipient ) {
+          //@ts-ignore
+          console.log("client " +JSON.stringify( client.token));
+          console.log("recipient " + JSON.stringify( recipient));
+          
+          
           client.send(JSON.stringify({ type: 'message', senderId: token, data: { 'message': data.data.message } }));
         
         }
